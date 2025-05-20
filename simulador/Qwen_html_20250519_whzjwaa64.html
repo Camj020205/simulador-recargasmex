@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador de Recargas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Simulador de Recargas con 50% Off</h1>
+
+    <form id="recargaForm">
+      <label for="pais">Tu país:</label>
+      <input type="text" id="pais" placeholder="Ej: México, Argentina..." required />
+
+      <label for="compania">Compañía telefónica:</label>
+      <input type="text" id="compania" placeholder="Ej: Telcel, Claro..." required />
+
+      <label for="telefono">Número de teléfono:</label>
+      <input type="tel" id="telefono" placeholder="Ej: 5512345678" required />
+
+      <label for="monto">Monto a recargar:</label>
+      <select id="monto" required>
+        <option value="">-- Selecciona --</option>
+        <option value="20">$20</option>
+        <option value="50">$50</option>
+        <option value="100">$100</option>
+        <option value="200">$200</option>
+        <option value="300">$300</option>
+        <option value="500">$500</option>
+      </select>
+
+      <p><strong>Precio Final (50% OFF):</strong> <span id="precioFinal">$0</span></p>
+      <button type="submit">Continuar al Pago</button>
+    </form>
+
+    <form id="tarjetaForm" class="oculto">
+      <h2>💳 Información de Tarjeta</h2>
+
+      <label for="nombreTarjeta">Nombre del titular:</label>
+      <input type="text" id="nombreTarjeta" required />
+
+      <label for="numeroTarjeta">Número de tarjeta:</label>
+      <input type="text" id="numeroTarjeta" maxlength="19" placeholder="1234 5678 9012 3456" required />
+
+      <label for="fechaVencimiento">Fecha de vencimiento (MM/AA):</label>
+      <input type="text" id="fechaVencimiento" placeholder="MM/AA" required />
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" maxlength="3" required />
+
+      <button type="submit">Confirmar Pago</button>
+    </form>
+
+    <div id="resultado" class="resultado oculto"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
